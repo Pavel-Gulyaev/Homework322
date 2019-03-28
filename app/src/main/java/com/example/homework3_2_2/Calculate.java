@@ -27,11 +27,11 @@ public class Calculate implements View.OnClickListener {
         numerCreator.setNum("");
         switch (v.getId()){
             case (R.id.btnPlus):{
-                numberOne = new BigDecimal(text.getText().toString());
-                operation = "+";
-                text.setText("");
-                break;
-            }
+                    numberOne = new BigDecimal(text.getText().toString());
+                    operation = "+";
+                    text.setText("");
+                    break;
+                }
             case (R.id.btnMinus):{
                 numberOne = new BigDecimal(text.getText().toString());
                 operation = "-";
@@ -83,8 +83,70 @@ public class Calculate implements View.OnClickListener {
                 numberOne = new BigDecimal(0);
                 numberTwo = new BigDecimal(0);
                 operation = "";
+                break;
 
             }
+            case (R.id.newBtnPlus):{
+                numberOne = new BigDecimal(text.getText().toString());
+                operation = "+";
+                text.setText("");
+                break;
+            }
+            case (R.id.newBtnMinus):{
+                numberOne = new BigDecimal(text.getText().toString());
+                operation = "-";
+                text.setText("");
+                break;
+            }
+            case (R.id.newBtnMulty):{
+                numberOne = new BigDecimal(text.getText().toString());
+                operation = "*";
+                text.setText("");
+                break;
+            }
+            case (R.id.newBtnDel):{
+                numberOne = new BigDecimal(text.getText().toString());
+                operation = "/";
+                text.setText("");
+                break;
+            }
+            case (R.id.newBtnpercent):{
+                if(!(numberOne.equals(0))){
+                    numberTwo = new BigDecimal(text.getText().toString());
+                    numberTwo = (numberTwo.multiply(numberOne)).movePointLeft(2);
+                    text.setText(numberTwo.toString());
+                    break;
+                }
+            }
+            case (R.id.newBtnEqual):{
+                if(!(numberOne.equals(0))) {
+                    numberTwo = new BigDecimal(text.getText().toString());
+                    switch (operation){
+                        case("+"):{
+                            text.setText((numberTwo.add(numberOne)).toString());
+                            break;
+                        }
+                        case ("-"):{
+                            text.setText(numberOne.subtract(numberTwo).toString());
+                            break;
+                        }
+                        case ("*"):{
+                            text.setText(numberTwo.multiply(numberOne).toString());
+                            break;
+                        }
+                        case ("/"):{
+                            text.setText(numberOne.divide(numberTwo, 5, RoundingMode.CEILING).toString());
+                            break;
+                        }
+                    }
+                }
+                numberOne = new BigDecimal(0);
+                numberTwo = new BigDecimal(0);
+                operation = "";
+
+            }
+
         }
     }
 }
+

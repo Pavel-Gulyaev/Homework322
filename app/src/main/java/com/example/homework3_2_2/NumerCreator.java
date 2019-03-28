@@ -42,7 +42,7 @@ public class NumerCreator implements View.OnClickListener {
 
         switch (v.getId()) {
 
-            case (R.id.btnC):{
+            case (R.id.btnC ):{
                 if(!(num.equals(""))) {
                     num = num.substring(0, num.length() - 1);
                 }
@@ -56,6 +56,29 @@ public class NumerCreator implements View.OnClickListener {
                 break;
             }
             case (R.id.btnsign): {
+                if (num.contains("-")) {
+                    num = num.substring(1, num.length());
+                } else {
+                    num = "-" + num;
+                }
+
+
+                break;
+            }
+            case (R.id.newBtnC ):{
+                if(!(num.equals(""))) {
+                    num = num.substring(0, num.length() - 1);
+                }
+            }
+
+            case (R.id.newBtndot): {
+                if (!dotted) {
+                    num += ((Button) v).getText().toString();
+                    dotted = true;
+                }
+                break;
+            }
+            case (R.id.newBtnsign): {
                 if (num.contains("-")) {
                     num = num.substring(1, num.length());
                 } else {

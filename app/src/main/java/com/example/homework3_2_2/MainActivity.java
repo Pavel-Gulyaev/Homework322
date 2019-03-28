@@ -39,6 +39,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 (Button) findViewById(R.id.btnDel),
                 (Button) findViewById(R.id.btnEqual));
 
+        NumerCreator numerCreatorEngenier = new NumerCreator(
+                (TextView) findViewById(R.id.text),
+                (Button) findViewById(R.id.newBtn0),
+                (Button) findViewById(R.id.newBtn1),
+                (Button) findViewById(R.id.newBtn2),
+                (Button) findViewById(R.id.newBtn3),
+                (Button) findViewById(R.id.newBtn4),
+                (Button) findViewById(R.id.newBtn5),
+                (Button) findViewById(R.id.newBtn6),
+                (Button) findViewById(R.id.newBtn7),
+                (Button) findViewById(R.id.newBtn8),
+                (Button) findViewById(R.id.newBtn9),
+                (Button) findViewById(R.id.newBtndot),
+                (Button) findViewById(R.id.newBtnsign),
+                (Button) findViewById(R.id.newBtnC));
+
+        Calculate calculateEngenier = new Calculate(
+                numerCreatorEngenier,
+                (Button) findViewById(R.id.newBtnMinus),
+                (Button) findViewById(R.id.newBtnMulty),
+                (Button) findViewById(R.id.newBtnpercent),
+                (Button) findViewById(R.id.newBtnPlus),
+                (Button) findViewById(R.id.newBtnDel),
+                (Button) findViewById(R.id.newBtnEqual));
+
     }
 
     @Override
